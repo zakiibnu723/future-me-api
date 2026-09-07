@@ -22,7 +22,7 @@ class AgingResponse(BaseModel):
     image_base64: str
 
 @app.post("/generate", response_model=AgingResponse)
-async def generate_aged_face(req: AgingRequest):
+def generate_aged_face(req: AgingRequest):
     try:
         # 1. Decode base64 image
         image_bytes = base64.b64decode(req.image_base64)
